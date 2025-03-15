@@ -1,19 +1,32 @@
+import { useState } from "react";
+import Header from "./components/Header";
+import Tasks from "./components/Tasks";
+import tasks from "./data/tasks.json";
+
+   interface Task {
+      id: number;
+      title: string;
+      description: string;
+      isCompleted: boolean;
+   }
+
+   const task: Task[] = tasks as Task[];
+
 function App() {
+
+   const [task, setTask] = useState<Task[]>(tasks); 
+
    return (
-      <div className="w-screen h-screen bg-[#1c1a1d]">
-         <div className="flex justify-center items-center">
-            <header>
-               <h1 className="font-jetbrains text-white">
-                  Dev<span>Task</span>
-               </h1>
-            </header>
-            <section className="w-[50%] bg-[#2b2e33]">
-               <input type="text" placeholder="Digite o título da tarefa" />
-               <input type="text" placeholder="Digite a descrição da tarefa" />
-            </section>
+      <div className="w-screen h-screen bg-[#1c1a1d] font-jetbrains text-white flex flex-col">
+         <div>
+            <Header />
+            <Tasks tasks = {task}/>
+            {/* <AddTask /> */}
          </div>
       </div>
    );
 }
 
 export default App;
+
+// pesquisa de tarefas

@@ -3,4 +3,6 @@
 
 @theme {
   --font-jetbrains: JetBrains Mono, sans-serif;
+  --color-principal: #5C1D9D;
+  --color-secundaria: #00A099;
 }
