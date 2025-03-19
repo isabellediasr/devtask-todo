@@ -1,0 +1,29 @@
+@import "tailwindcss";
+@import url('https://fonts.googleapis.com/css2?family=JetBrains+Mono:ital,wght@0,100..800;1,100..800&display=swap');
+
+@theme {
+  /* Fonts */
+  --font-jetbrains: JetBrains Mono, sans-serif;
+
+  /* Colors */
+  --color-main: #00A099;
+  --color-principal: #5C1D9D;
+
+  /* Background Colors*/
+  --color-bg-light: #2D2D2D;
+  --color-bg-main: #171717;
+  --color-bg-dark: #1C1A1D;
+  --color-teste: rgb(23,23,23);
+}
+
+/* Dark */
+/* --font-jetbrains: JetBrains Mono, sans-serif;
+  --color-principal: #5C1D9D;
+  --color-secundaria: #00A099; */
+
+/* Ligth */
+/* --font-jetbrains: JetBrains Mono, sans-serif;
+  --color-principal: #5C1D9D;
+  --color-secundaria: #00A099;
+  --color-bg: #1C1A1D;
+  --color-bg-secundario: #2D2B2E; */
