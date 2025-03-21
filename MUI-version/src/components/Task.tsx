@@ -1,7 +1,7 @@
 import { Box, List, ListItem, Button } from "@mui/material";
 import { ExternalLink, Trash2 } from "lucide-react";
 
-function Task() {
+function Task({tasks, onTaskClick}) {
    return (
       <Box
          borderRadius={"0.375rem"}
@@ -10,24 +10,44 @@ function Task() {
             marginTop: "1.25rem",
          }}
       >
-         <List sx={{}}>
+         <List 
+            sx={{
+               padding: "24px",
+               display: "flex",
+               flexDirection: "column",
+               gap: "12px"
+            }}
+         >
+            {tasks.map((task) => (
             <ListItem
+               key={task.id}
                sx={{
                   borderRadius: "50px",
                   justifyContent: "space-between",
-                  gap:"0.375rem",
-                  alignItems: "center",
+                  gap: "0.5rem",
+                  alignItems: "center"
                }}
             >
                <Button
+                  fullWidth
                   variant="contained"
-                  sx={{ bgcolor: "customBackgrounds.primary", width: "80%"}}
+                  onClick={onTaskClick}
+                  sx={{
+                     bgcolor: "customBackgrounds.primary",
+                     padding: "12px",
+                     justifyContent: "flex-start",
+                     fontSize: "16px",
+                     height: "48px"
+                  }}
                >
-                  Title
+                  {task.title}
                </Button>
                <Button
                   variant="contained"
-                  sx={{ bgcolor: "customBackgrounds.primary", width: "10%" }}
+                  sx={{ 
+                     bgcolor: "customBackgrounds.primary",
+                     padding: "12px"
+                  }}
                >
                   <ExternalLink color="#00A089" />
                </Button>
@@ -35,13 +55,12 @@ function Task() {
                   variant="contained"
                   sx={{
                      bgcolor: "customBackgrounds.primary",
-                     width: "10%",
-                     
+                     padding: "12px"
                   }}
                >
                   <Trash2 color="#00A089" width={"24px"} height={"24px"} />
                </Button>
-            </ListItem>
+            </ListItem>))}
          </List>
       </Box>
    );

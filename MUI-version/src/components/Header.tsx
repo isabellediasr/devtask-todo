@@ -21,6 +21,7 @@ function Header() {
             >
                <LaptopMinimalCheck color="#3e9392" size={45}/>
                <Typography
+               component="h1"
                sx={{
                   fontSize: "1.875rem",
                   fontWeight: "fontWeightBold",
@@ -28,6 +29,7 @@ function Header() {
                >
                   Dev
                   <Typography
+                     component="span"
                      sx={{
                         display: "inline",
                         color: "primary.main",

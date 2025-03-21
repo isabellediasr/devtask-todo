@@ -27,15 +27,42 @@ const theme = createTheme({
       },
       background: {
          default: "#171717",
-         paper: "#1C1A1D",
+         paper: "#202020",
       },
       customBackgrounds: {
-         primary: "#2D2D2D",
+         primary: "#333333",
       },
    },
    typography: {
       fontFamily: '"JetBrains Mono", monospace',
       fontWeightBold: 700,
+   },
+   components: {
+      MuiButton: {
+         styleOverrides: {
+            root: {
+               padding: "0", // Remove padding globalmente
+               minWidth: "unset", // Opcional: impede que o botão tenha um tamanho mínimo
+               textTransform: "none", // Opcional: mantém o texto como está
+            },
+         },
+      },
+      MuiListItem: {
+         styleOverrides: {
+            root: {
+               padding: "0", // Remove padding globalmente
+               minWidth: "unset",
+            }
+         }
+      },
+      MuiList: {
+         styleOverrides: {
+            root: {
+               padding: "0", // Remove padding globalmente
+               minWidth: "unset",
+            }
+         }
+      }
    },
 });
 
